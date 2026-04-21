@@ -45,7 +45,7 @@ export default function Home() {
             <span>Coming to 29229, Columbia SC</span>
           </div>
           <h1 className="text-5xl md:text-7xl font-display font-bold tracking-tight mb-6 max-w-4xl leading-tight">
-            Building Tomorrow's Leaders, <span className="text-secondary">Today.</span>
+            The Summit <span className="text-secondary">Teen Rec Center</span>
           </h1>
           <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mb-10">
             A state-of-the-art recreation and education center designed exclusively for teens. 
