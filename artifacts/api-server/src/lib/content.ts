@@ -121,6 +121,7 @@ export const programs = [
       { title: "Art Studio", description: "Drawing, painting, mixed-media, and digital art with rotating instructors." },
       { title: "Agriculture & Fish/Game Programs", description: "Hands-on outdoor learning — gardens, fishing, and conservation skills." },
       { title: "Pool Table & Ping Pong", description: "Casual hangout games with weekly tournaments and friendly rivalries." },
+      { title: "Reading Room", description: "A quiet, comfortable space stocked with books, magazines, and study nooks for teens who want to read, decompress, or get homework done." },
     ],
   },
   {
