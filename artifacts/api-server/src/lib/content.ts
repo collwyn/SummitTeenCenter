@@ -29,14 +29,14 @@ export const communityQuotes = [
   },
   {
     id: "shanice-ascue",
-    name: "Shanice Ascue",
+    name: "Shanice A.",
     neighborhood: "Trenholm",
     quote:
       "Look into creating a sponsorship tier. Start thinking of fundraising ideas right now. Let SCORE be your best friend.",
   },
   {
     id: "kathleen-monk",
-    name: "Kathleen Monk",
+    name: "Kathleen M.",
     neighborhood: "Lake Carolina",
     quote:
       "We both had youth centers growing up and how GOOD they were. We really wished these would be brought back now so teens would have things to do!",
