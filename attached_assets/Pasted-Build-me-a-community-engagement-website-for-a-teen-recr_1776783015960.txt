@@ -1,0 +1,46 @@
+Build me a community engagement website for a teen recreational and education center being developed in the 29229 zip code of Columbia, South Carolina.
+Tech Stack: Node.js + Express backend, EJS templates for pages, plain CSS for styling. Use SendGrid for email newsletter signups (I will provide the API key as an environment variable called SENDGRID_API_KEY, and my verified sender email as SENDGRID_SENDER).
+Site Name/Title: Use a placeholder name "The Summit Center" throughout — I will update this later.
+Color palette & feel: Modern, energetic, and welcoming to teens but also professional enough for parents and community leaders. Use a bold primary color (deep blue or teal), a warm accent (orange or gold), clean white backgrounds, and strong readable fonts. The design should feel like a cross between a community organization and a youth brand.
+Pages to build:
+
+Home (/) — Hero section with a bold tagline like "Building Tomorrow's Leaders, Today." Include two CTA buttons: "Learn More" and "Get Involved." Below the hero, add three icon cards previewing: Recreation, Career Development, and Community Programs.
+About (/about) — Tell the story of the center's origin from a community idea, the mission statement, and a "Why It Matters" section. Include a placeholder section for a founder message from Colin Cleveland.
+Programs (/programs) — Three columns or tabbed sections:
+
+Recreation: Sports, video gaming lounge, art studio, agriculture & fish/game programs, pool table, ping pong
+Career Development: Trade skills (HVAC, construction, agriculture, home improvement), entrepreneurship workshops, resume building, Red Cross certifications, babysitting training, cooking classes, driving school partnership, SCORE mentorship, college planning
+Community Involvement: Authority figure game nights (police, fire, EMT, politicians, USC Athletics, Fort Jackson/Shaw AFB), wildlife/zoo visits, mentor program, referral resources for counseling, jobs, and education
+
+
+Safety & Standards (/safety) — A professional, reassuring page covering: metal detector entry, bathroom access control, security cameras, zero-tolerance weapons/drug/alcohol policy, liability waivers, first aid station, age verification policy, staff background checks, and parent involvement requirements.
+Community Voices (/community) — A page showing real quotes pulled from Nextdoor community feedback. Hard-code these quotes for now as cards with a name, neighborhood, and quote. Also include a Suggestion Box form where visitors can submit ideas (store submissions in a simple JSON file on the server for now).
+Include these quotes:
+
+Terry T. (Ashland Falls): "You need the parents' involvement. A place where they unwind, have fun, do homework, or just get away to talk with an adult. A place to feel safe and be themselves."
+Susan A. (Heartland Dr): "Have local leaders actually hang out with kids doing fun activities. Let kids see they're real people. A basketball game vs. police, politicians shooting pool — that's how you rebuild trust."
+Maria I. (Summit Parkway): "Add Red Cross certifications, babysitting training, resume building, cooking classes, and a driving school partnership."
+Shanice Ascue (Trenholm): "Look into creating a sponsorship tier. Start thinking of fundraising ideas right now. Let SCORE be your best friend."
+Kathleen Monk (Lake Carolina): "We both had youth centers growing up and how GOOD they were. We really wished these would be brought back now so teens would have things to do!"
+
+
+Get Involved (/get-involved) — A page with two forms:
+
+Volunteer Interest Form: Name, email, phone, neighborhood/zip, how they want to help (checkboxes: Mentoring, Events, Fundraising, Skilled Trade Teaching, Administrative, Security/Monitoring, Other), and a message field. On submit, send a confirmation email via SendGrid and store the entry.
+Newsletter Signup Form: Just name and email. On submit, send a welcome email via SendGrid confirming their signup.
+
+
+News & Updates (/news) — A simple blog-style page. For now, populate it with one placeholder post titled "The Idea Is Born" describing how the project started on Nextdoor. Structure it so new posts can be added by editing a posts.json file (explain in a code comment how to add a new post).
+Gallery (/gallery) — A responsive image grid with placeholder images (use placeholder.com or similar). Leave clear comments in the code showing where to swap in real photos. Caption each image.
+Partners & Sponsors (/partners) — Show three sponsor tiers: Gold, Silver, and Bronze, with placeholder logos and descriptions of what each tier includes. Include a "Become a Partner" button that links to the contact page.
+Contact (/contact) — A general contact form (name, email, subject, message). On submit, send the message to my email via SendGrid.
+
+Navigation: A sticky top navbar with the center name/logo on the left and nav links on the right. On mobile, collapse to a hamburger menu.
+Footer: Include links to all pages, a short mission tagline, and placeholder social media icons (Facebook, Instagram, X/Twitter, YouTube).
+Additional requirements:
+
+The site must be mobile-responsive
+All forms should validate required fields before submitting
+Use environment variables for all sensitive keys (never hardcode them)
+Add a .env.example file showing what variables are needed
+Add clear comments throughout the code explaining what each section does, written for a beginner programmer who is maintaining the site

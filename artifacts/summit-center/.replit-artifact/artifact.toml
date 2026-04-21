@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "The Summit Center"
+version = "1.0.0"
+id = "artifacts/summit-center"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19809
+
+[services.development]
+run = "pnpm --filter @workspace/summit-center run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/summit-center", "run", "build" ]
+publicDir = "artifacts/summit-center/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19809"
+BASE_PATH = "/"
