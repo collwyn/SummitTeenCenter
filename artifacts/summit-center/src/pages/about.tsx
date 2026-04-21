@@ -28,7 +28,7 @@ export default function About() {
                   Parents and community members were noticing a common problem: teenagers in our area simply didn't have enough safe, engaging places to go after school and on weekends.
                 </p>
                 <p>
-                  What began as a simple conversation quickly turned into a movement. Local leaders, parents, and teens themselves came together to envision a space that wasn't just a rec center, but a hub for growth, learning, and community connection.
+                  What began as a simple conversation is quickly turning into a movement. Local leaders, parents, and teens themselves came together to envision a space that wasn't just a rec center, but a hub for growth, learning, and community connection.
                 </p>
               </div>
             </div>
