@@ -9,6 +9,10 @@ import imgLibrary from "@assets/AshlandYouthCenterComplex_Lnd_150dpi_web-1_17767
 import imgChairs from "@assets/bc3f5616ccbb8fcd7450126e1f0207cb_1776784489758.jpg";
 import imgGreenSpace from "@assets/fbea80803fa051f2e3d4aa822af965b8_1776784489759.jpg";
 import imgGym from "@assets/Fogarty-Finger-3_1776784489759.jpg";
+import imgBasketballCourt from "@assets/eed268aceb43bbe07aae29805019715b_1776795638962.jpg";
+import imgActiveLounge from "@assets/FallonYouthCenter19+edit_1776795638964.webp";
+import imgExterior from "@assets/Saint-Cloud-Youth-Center-1_1776795638964.jpg";
+import imgCommons from "@assets/WHY-Architects-Buildings-EPA-YAMC-01-scaled_1776795638964.jpg";
 
 const GALLERY_IMAGES = [
   { src: imgGaming, alt: "Teen gaming and music lounge", caption: "A vibrant gaming and music lounge" },
@@ -20,6 +24,10 @@ const GALLERY_IMAGES = [
   { src: imgChairs, alt: "Colorful collaboration room", caption: "Rooms made for hanging out and creating" },
   { src: imgGreenSpace, alt: "Indoor green hangout", caption: "Indoor green spaces to decompress" },
   { src: imgGym, alt: "Recreation hall with basketball court", caption: "Pride, identity, and a place to belong" },
+  { src: imgBasketballCourt, alt: "Full-size indoor basketball courts", caption: "Full-size courts for leagues and pick-up games" },
+  { src: imgActiveLounge, alt: "Active teen lounge with bold graphics", caption: "Bold, active spaces designed for teens" },
+  { src: imgExterior, alt: "Modern teen center exterior at dusk", caption: "Architecture that signals: this place is yours" },
+  { src: imgCommons, alt: "Open commons with grand staircase and cafe", caption: "An open commons to gather, eat, and connect" },
 ];
 
 export default function Gallery() {
