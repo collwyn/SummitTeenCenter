@@ -12,7 +12,9 @@ import {
   contactSubmissions,
   suggestions,
 } from "@workspace/db";
-import { sendEmail, getSenderEmail } from "../lib/email";
+import { sendEmail } from "../lib/email";
+
+const NOTIFY_EMAIL = "summitteencenter@gmail.com";
 
 const router: IRouter = Router();
 
@@ -72,15 +74,12 @@ router.post("/volunteer", async (req, res) => {
   });
 
   // Notify staff
-  const sender = getSenderEmail();
-  if (sender) {
-    await sendEmail({
-      to: sender,
-      replyTo: email,
-      subject: `New volunteer interest: ${name}`,
-      text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nNeighborhood: ${neighborhood}\nInterests: ${interestList}\nMessage:\n${message ?? "(none)"}`,
-    });
-  }
+  await sendEmail({
+    to: NOTIFY_EMAIL,
+    replyTo: email,
+    subject: `New volunteer interest: ${name}`,
+    text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nNeighborhood: ${neighborhood}\nInterests: ${interestList}\nMessage:\n${message ?? "(none)"}`,
+  });
 
   res.json({ ok: true, message: "Thanks for stepping up — we'll be in touch soon." });
 });
@@ -95,15 +94,12 @@ router.post("/contact", async (req, res) => {
 
   await db.insert(contactSubmissions).values({ name, email, subject, message });
 
-  const sender = getSenderEmail();
-  if (sender) {
-    await sendEmail({
-      to: sender,
-      replyTo: email,
-      subject: `[Contact] ${subject}`,
-      text: `From: ${name} <${email}>\n\n${message}`,
-    });
-  }
+  await sendEmail({
+    to: NOTIFY_EMAIL,
+    replyTo: email,
+    subject: `[Contact] ${subject}`,
+    text: `From: ${name} <${email}>\n\n${message}`,
+  });
 
   // Auto-acknowledge to sender
   await sendEmail({
@@ -130,14 +126,11 @@ router.post("/suggestions", async (req, res) => {
   });
 
   // Notify staff (no auto-reply since name/email are optional)
-  const sender = getSenderEmail();
-  if (sender) {
-    await sendEmail({
-      to: sender,
-      subject: "New community suggestion",
-      text: `From: ${name ?? "(anonymous)"} ${neighborhood ? `(${neighborhood})` : ""}\n\n${suggestion}`,
-    });
-  }
+  await sendEmail({
+    to: NOTIFY_EMAIL,
+    subject: "New community suggestion",
+    text: `From: ${name ?? "(anonymous)"} ${neighborhood ? `(${neighborhood})` : ""}\n\n${suggestion}`,
+  });
 
   res.json({ ok: true, message: "Thanks for the suggestion. We read every one." });
 });
