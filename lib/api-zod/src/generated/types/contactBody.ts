@@ -6,6 +6,12 @@
  * OpenAPI spec version: 0.1.0
  */
 
-export interface HealthStatus {
-  status: string;
+export interface ContactBody {
+  /** @minLength 1 */
+  name: string;
+  email: string;
+  /** @minLength 1 */
+  subject: string;
+  /** @minLength 1 */
+  message: string;
 }

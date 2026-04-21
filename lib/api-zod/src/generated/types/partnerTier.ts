@@ -6,6 +6,11 @@
  * OpenAPI spec version: 0.1.0
  */
 
-export interface HealthStatus {
-  status: string;
+export interface PartnerTier {
+  id: string;
+  tier: string;
+  priceRange: string;
+  description: string;
+  benefits: string[];
+  sampleSponsors: string[];
 }

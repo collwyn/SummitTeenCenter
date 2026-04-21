@@ -5,7 +5,11 @@
  * API specification for The Summit Center community engagement website
  * OpenAPI spec version: 0.1.0
  */
+import type { ProgramOffering } from "./programOffering";
 
-export interface HealthStatus {
-  status: string;
+export interface ProgramCategory {
+  id: string;
+  name: string;
+  tagline: string;
+  offerings: ProgramOffering[];
 }

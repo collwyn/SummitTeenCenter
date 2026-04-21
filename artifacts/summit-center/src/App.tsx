@@ -4,25 +4,42 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 
-const queryClient = new QueryClient();
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import Home from "@/pages/home";
+import About from "@/pages/about";
+import Programs from "@/pages/programs";
+import Safety from "@/pages/safety";
+import Community from "@/pages/community";
+import GetInvolved from "@/pages/get-involved";
+import News from "@/pages/news";
+import Gallery from "@/pages/gallery";
+import Partners from "@/pages/partners";
+import Contact from "@/pages/contact";
 
-function Home() {
-  return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-gray-50">
-      <div className="text-center">
-        <h1 className="text-2xl font-bold text-gray-900">Replit Agent is building...</h1>
-        <p className="mt-2 text-sm text-gray-600">Your app will appear here once it's ready.</p>
-      </div>
-    </div>
-  );
-}
+const queryClient = new QueryClient();
 
 function Router() {
   return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route component={NotFound} />
-    </Switch>
+    <div className="flex min-h-screen flex-col">
+      <Navbar />
+      <main className="flex-1">
+        <Switch>
+          <Route path="/" component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/programs" component={Programs} />
+          <Route path="/safety" component={Safety} />
+          <Route path="/community" component={Community} />
+          <Route path="/get-involved" component={GetInvolved} />
+          <Route path="/news" component={News} />
+          <Route path="/gallery" component={Gallery} />
+          <Route path="/partners" component={Partners} />
+          <Route path="/contact" component={Contact} />
+          <Route component={NotFound} />
+        </Switch>
+      </main>
+      <Footer />
+    </div>
   );
 }
 

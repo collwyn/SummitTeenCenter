@@ -1,0 +1,98 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "hpqZjfkNIZUdX1kWc7qW7"
+uri = "file://artifacts/summit-center/public/gallery/basketball.png"
+type = "image"
+title = "Teens playing basketball indoor court"
+
+[[generated]]
+id = "ZkO1yk_Eie1ND-B3MaEDT"
+uri = "file://artifacts/summit-center/public/gallery/art.png"
+type = "image"
+title = "Teen painting in art studio"
+
+[[generated]]
+id = "mvI1MJ1dXkg_yWX-HkjbJ"
+uri = "file://artifacts/summit-center/public/gallery/cooking.png"
+type = "image"
+title = "Teen group cooking class"
+
+[[generated]]
+id = "gRX5HDe6ivnUIKOEgTwfX"
+uri = "file://artifacts/summit-center/public/gallery/mentor.png"
+type = "image"
+title = "Mentor and teen looking at laptop"
+
+[[generated]]
+id = "A2bZ1zIOMtD-Gp-emreDt"
+uri = "file://artifacts/summit-center/public/gallery/study.png"
+type = "image"
+title = "Teens studying in modern library"
+
+[[generated]]
+id = "3WO4ndvEB8H19gth5A690"
+uri = "file://artifacts/summit-center/public/gallery/coding.png"
+type = "image"
+title = "Teen learning to code"
+
+[[generated]]
+id = "5_LuUGUqdQKJRzAPBpI_C"
+uri = "file://artifacts/summit-center/public/gallery/garden.png"
+type = "image"
+title = "Teens in community garden"
+
+[[generated]]
+id = "eUwuw7wpfv7K8ZCQU0GeK"
+uri = "file://artifacts/summit-center/public/gallery/music.png"
+type = "image"
+title = "Teen playing guitar music room"
+
+[[generated]]
+id = "M4w1jUpbfCOUuP1z9cZP7"
+uri = "file://artifacts/summit-center/src/assets/gallery/basketball.png"
+type = "image"
+title = "Teens playing basketball indoors"
+
+[[generated]]
+id = "EKHhlx6pP54dlKeXMxUSs"
+uri = "file://artifacts/summit-center/src/assets/gallery/art.png"
+type = "image"
+title = "Teens in an art studio"
+
+[[generated]]
+id = "DM0MC24eZ6TDPj0gfZi4n"
+uri = "file://artifacts/summit-center/src/assets/gallery/cooking.png"
+type = "image"
+title = "Teens cooking together"
+
+[[generated]]
+id = "fmGt2Gtqcebu-Ra8eQvzy"
+uri = "file://artifacts/summit-center/src/assets/gallery/mentor.png"
+type = "image"
+title = "Teen mentoring session"
+
+[[generated]]
+id = "6dnk3YKSVu9A2B7968DxB"
+uri = "file://artifacts/summit-center/src/assets/gallery/coding.png"
+type = "image"
+title = "Teens in a coding lab"
+
+[[generated]]
+id = "_mhEVir7HHv0RxPENIban"
+uri = "file://artifacts/summit-center/src/assets/gallery/garden.png"
+type = "image"
+title = "Teens in a community garden"
+
+[[generated]]
+id = "gds7Gq3qcDXj27fKNtD5y"
+uri = "file://artifacts/summit-center/src/assets/gallery/study.png"
+type = "image"
+title = "Teens studying together"
+
+[[generated]]
+id = "IPaWefUTxVXOybCUPl9cM"
+uri = "file://artifacts/summit-center/src/assets/gallery/portrait.png"
+type = "image"
+title = "Group portrait of teens"

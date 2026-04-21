@@ -3,20 +3,23 @@ info:
   # Do not change the title, if the title changes, the import paths will be broken
   title: Api
   version: 0.1.0
-  description: API specification
+  description: API specification for The Summit Center community engagement website
 servers:
   - url: /api
     description: Base API path
 tags:
   - name: health
     description: Health operations
+  - name: forms
+    description: Form submissions (newsletter, volunteer, contact, suggestions)
+  - name: content
+    description: Content endpoints (community quotes, news posts, partners, programs)
 paths:
   /healthz:
     get:
       operationId: healthCheck
       tags: [health]
       summary: Health check
-      description: Returns server health status
       responses:
         "200":
           description: Healthy
@@ -24,6 +27,143 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+
+  /newsletter:
+    post:
+      operationId: subscribeNewsletter
+      tags: [forms]
+      summary: Subscribe to the newsletter
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/NewsletterBody"
+      responses:
+        "200":
+          description: Subscribed
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SubmissionResult"
+
+  /volunteer:
+    post:
+      operationId: submitVolunteer
+      tags: [forms]
+      summary: Submit a volunteer interest form
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/VolunteerBody"
+      responses:
+        "200":
+          description: Submitted
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SubmissionResult"
+
+  /contact:
+    post:
+      operationId: submitContact
+      tags: [forms]
+      summary: Submit a general contact form
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ContactBody"
+      responses:
+        "200":
+          description: Submitted
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SubmissionResult"
+
+  /suggestions:
+    post:
+      operationId: submitSuggestion
+      tags: [forms]
+      summary: Submit a suggestion via the community suggestion box
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SuggestionBody"
+      responses:
+        "200":
+          description: Submitted
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SubmissionResult"
+
+  /community/quotes:
+    get:
+      operationId: listCommunityQuotes
+      tags: [content]
+      summary: Get community voices quotes
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/CommunityQuote"
+
+  /news/posts:
+    get:
+      operationId: listNewsPosts
+      tags: [content]
+      summary: Get news / blog posts
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/NewsPost"
+
+  /partners:
+    get:
+      operationId: listPartners
+      tags: [content]
+      summary: Get sponsor / partner tiers
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/PartnerTier"
+
+  /programs:
+    get:
+      operationId: listPrograms
+      tags: [content]
+      summary: Get program categories with offerings
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ProgramCategory"
+
 components:
   schemas:
     HealthStatus:
@@ -31,6 +171,163 @@ components:
       properties:
         status:
           type: string
-      required:
-        - status
+      required: [status]
 
+    SubmissionResult:
+      type: object
+      properties:
+        ok:
+          type: boolean
+        message:
+          type: string
+      required: [ok, message]
+
+    NewsletterBody:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 1
+        email:
+          type: string
+          format: email
+      required: [name, email]
+
+    VolunteerInterest:
+      type: string
+      enum:
+        - mentoring
+        - events
+        - fundraising
+        - skilled_trade_teaching
+        - administrative
+        - security_monitoring
+        - other
+
+    VolunteerBody:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 1
+        email:
+          type: string
+          format: email
+        phone:
+          type: string
+          minLength: 7
+        neighborhood:
+          type: string
+          minLength: 1
+        interests:
+          type: array
+          items:
+            $ref: "#/components/schemas/VolunteerInterest"
+          minItems: 1
+        message:
+          type: string
+      required: [name, email, phone, neighborhood, interests]
+
+    ContactBody:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 1
+        email:
+          type: string
+          format: email
+        subject:
+          type: string
+          minLength: 1
+        message:
+          type: string
+          minLength: 1
+      required: [name, email, subject, message]
+
+    SuggestionBody:
+      type: object
+      properties:
+        name:
+          type: string
+        neighborhood:
+          type: string
+        suggestion:
+          type: string
+          minLength: 1
+      required: [suggestion]
+
+    CommunityQuote:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        neighborhood:
+          type: string
+        quote:
+          type: string
+      required: [id, name, neighborhood, quote]
+
+    NewsPost:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        date:
+          type: string
+        author:
+          type: string
+        excerpt:
+          type: string
+        body:
+          type: string
+      required: [id, title, date, author, excerpt, body]
+
+    PartnerTier:
+      type: object
+      properties:
+        id:
+          type: string
+        tier:
+          type: string
+        priceRange:
+          type: string
+        description:
+          type: string
+        benefits:
+          type: array
+          items:
+            type: string
+        sampleSponsors:
+          type: array
+          items:
+            type: string
+      required: [id, tier, priceRange, description, benefits, sampleSponsors]
+
+    ProgramOffering:
+      type: object
+      properties:
+        title:
+          type: string
+        description:
+          type: string
+      required: [title, description]
+
+    ProgramCategory:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        tagline:
+          type: string
+        offerings:
+          type: array
+          items:
+            $ref: "#/components/schemas/ProgramOffering"
+      required: [id, name, tagline, offerings]
