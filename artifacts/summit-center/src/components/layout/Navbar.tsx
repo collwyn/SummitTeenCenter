@@ -16,7 +16,6 @@ const NAV_LINKS = [
   { href: "/community", label: "Community" },
   { href: "/news", label: "News" },
   { href: "/gallery", label: "Gallery" },
-  { href: "/partners", label: "Partners" },
 ];
 
 export default function Navbar() {
