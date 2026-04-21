@@ -1,4 +1,5 @@
-import { Image as ImageIcon } from "lucide-react";
+import { useEffect, useState, useCallback } from "react";
+import { Image as ImageIcon, X, ChevronLeft, ChevronRight } from "lucide-react";
 
 import imgGaming from "@assets/0c834c6342fc704e844c275b99b1dcdc_1776784489756.jpg";
 import imgReadingLounge from "@assets/0e848e9b5c9c1f06b32f1c2d12f5c323_1776784489757.jpg";
@@ -31,6 +32,40 @@ const GALLERY_IMAGES = [
 ];
 
 export default function Gallery() {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const isOpen = activeIndex !== null;
+
+  const close = useCallback(() => setActiveIndex(null), []);
+  const next = useCallback(
+    () => setActiveIndex((i) => (i === null ? null : (i + 1) % GALLERY_IMAGES.length)),
+    []
+  );
+  const prev = useCallback(
+    () =>
+      setActiveIndex((i) =>
+        i === null ? null : (i - 1 + GALLERY_IMAGES.length) % GALLERY_IMAGES.length
+      ),
+    []
+  );
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") close();
+      if (e.key === "ArrowRight") next();
+      if (e.key === "ArrowLeft") prev();
+    };
+    window.addEventListener("keydown", onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [isOpen, close, next, prev]);
+
+  const active = activeIndex !== null ? GALLERY_IMAGES[activeIndex] : null;
+
   return (
     <div className="flex flex-col w-full bg-muted/10 min-h-[calc(100vh-4rem)]">
       <section className="bg-primary py-16 md:py-20 text-primary-foreground">
@@ -47,9 +82,12 @@ export default function Gallery() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {GALLERY_IMAGES.map((img, idx) => (
-              <div
+              <button
                 key={idx}
-                className="group relative rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 bg-muted/30 aspect-[4/3]"
+                type="button"
+                onClick={() => setActiveIndex(idx)}
+                aria-label={`Open image: ${img.alt}`}
+                className="group relative rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 bg-muted/30 aspect-[4/3] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary cursor-zoom-in text-left"
               >
                 <img
                   src={img.src}
@@ -63,11 +101,65 @@ export default function Gallery() {
                     </p>
                   </div>
                 </div>
-              </div>
+              </button>
             ))}
           </div>
         </div>
       </section>
+
+      {isOpen && active && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={active.alt}
+          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 md:p-8"
+          onClick={close}
+        >
+          <button
+            type="button"
+            onClick={(e) => { e.stopPropagation(); close(); }}
+            aria-label="Close"
+            className="absolute top-4 right-4 md:top-6 md:right-6 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 rounded-full p-2 transition-colors"
+          >
+            <X className="h-6 w-6" />
+          </button>
+
+          <button
+            type="button"
+            onClick={(e) => { e.stopPropagation(); prev(); }}
+            aria-label="Previous image"
+            className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 rounded-full p-2 md:p-3 transition-colors"
+          >
+            <ChevronLeft className="h-6 w-6 md:h-8 md:w-8" />
+          </button>
+
+          <button
+            type="button"
+            onClick={(e) => { e.stopPropagation(); next(); }}
+            aria-label="Next image"
+            className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 rounded-full p-2 md:p-3 transition-colors"
+          >
+            <ChevronRight className="h-6 w-6 md:h-8 md:w-8" />
+          </button>
+
+          <figure
+            className="max-w-6xl w-full max-h-full flex flex-col items-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={active.src}
+              alt={active.alt}
+              className="max-h-[80vh] w-auto max-w-full object-contain rounded-lg shadow-2xl"
+            />
+            <figcaption className="mt-4 text-center text-white/90 text-sm md:text-base max-w-2xl">
+              <span className="block font-medium">{active.caption}</span>
+              <span className="block text-white/60 text-xs mt-1">
+                {(activeIndex ?? 0) + 1} / {GALLERY_IMAGES.length}
+              </span>
+            </figcaption>
+          </figure>
+        </div>
+      )}
     </div>
   );
 }
