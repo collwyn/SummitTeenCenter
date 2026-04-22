@@ -43,7 +43,7 @@ export default function Home() {
           src={heroBg}
           alt=""
           aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-cover opacity-30 pointer-events-none select-none"
+          className="absolute inset-0 w-full h-full object-cover opacity-40 pointer-events-none select-none"
         />
         <div className="absolute inset-0 bg-primary/60 pointer-events-none" />
         <div className="container mx-auto px-4 relative z-10 text-center flex flex-col items-center">
