@@ -73,6 +73,27 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Why Section */}
+      <section className="py-16 md:py-20 bg-white border-b border-muted">
+        <div className="container mx-auto px-4 max-w-3xl text-center">
+          <p className="text-sm font-semibold uppercase tracking-widest text-secondary mb-6">Why This Matters</p>
+          <blockquote className="space-y-5 text-foreground">
+            <p className="text-xl md:text-2xl font-display font-semibold leading-snug">
+              Teens need a "third space." Somewhere to go besides home and school.
+            </p>
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+              At times, their third-spaces often lead them into undesirable situations, harmful to themselves and the community at large.
+            </p>
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+              Let's give Richland County teens a better option. The website you're viewing is the first step in the planning of a new teen recreation, education, and career center — a center that, with all of our suggestions and effort, can become a hallmark of knowledge, direction, and self-governance for this county's young folks.
+            </p>
+            <p className="text-lg md:text-xl font-semibold text-primary leading-snug">
+              It won't be an easy task, but if we all truly wish the best for our students, we can make it happen.
+            </p>
+          </blockquote>
+        </div>
+      </section>
+
       {/* Pillars Section */}
       <section className="py-24 bg-muted/30">
         <div className="container mx-auto px-4">
