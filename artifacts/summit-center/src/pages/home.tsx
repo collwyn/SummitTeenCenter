@@ -98,9 +98,9 @@ export default function Home() {
       <section className="py-24 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-display font-bold text-foreground mb-4">Our Core Pillars</h2>
+            <h2 className="text-3xl font-display font-bold text-foreground mb-4">The Richland Center's Core Pillars</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Everything we do at The Summit Center is built around three core focus areas designed to support comprehensive youth development.
+              The Summit Center will be built around three core focus areas designed to support comprehensive youth development.
             </p>
           </div>
           
