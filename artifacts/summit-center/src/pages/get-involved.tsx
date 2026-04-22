@@ -299,7 +299,6 @@ export default function GetInvolved() {
                         Serving the 29229 zip code.<br/>
                         Columbia, South Carolina
                       </p>
-                      <p className="text-sm text-primary mt-2 font-medium">Facility under construction</p>
                     </div>
                   </div>
                 </CardContent>

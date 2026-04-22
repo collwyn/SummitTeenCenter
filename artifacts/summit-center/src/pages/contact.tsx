@@ -66,7 +66,6 @@ export default function Contact() {
                       <div>
                         <p className="font-bold text-foreground">Future Location</p>
                         <p className="text-muted-foreground mt-1">29229 Area<br />Columbia, SC</p>
-                        <p className="text-sm text-secondary font-medium mt-2 bg-secondary/10 inline-block px-2 py-1 rounded">Facility under construction</p>
                       </div>
                     </div>
                     
@@ -76,8 +75,8 @@ export default function Contact() {
                       </div>
                       <div>
                         <p className="font-bold text-foreground">Email</p>
-                        <a href="mailto:hello@summitcenter.org" className="text-muted-foreground hover:text-primary transition-colors mt-1 block">
-                          hello@summitcenter.org
+                        <a href="mailto:summitteencenter@gmail.com" className="text-muted-foreground hover:text-primary transition-colors mt-1 block">
+                          summitteencenter@gmail.com
                         </a>
                       </div>
                     </div>
@@ -85,7 +84,7 @@ export default function Contact() {
 
                   <div className="mt-8 pt-8 border-t border-border/50">
                     <p className="text-sm text-muted-foreground leading-relaxed italic">
-                      Note: Because our facility is actively under construction, our team is operating remotely. The best way to reach us is via this contact form or email.
+                      The best way to reach out is via this contact form or email at summitteencenter@gmail.com.
                     </p>
                   </div>
                 </CardContent>
