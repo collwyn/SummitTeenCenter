@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { ArrowRight, Trophy, BookOpen, Users, MapPin, Heart } from "lucide-react";
+import heroBg from "@assets/FallonYouthCenter19+edit_1776830391718.webp";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useSubscribeNewsletter } from "@workspace/api-client-react";
@@ -38,7 +39,13 @@ export default function Home() {
     <div className="flex flex-col w-full">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-primary pt-24 pb-32 text-primary-foreground">
-        <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] pointer-events-none"></div>
+        <img
+          src={heroBg}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover opacity-15 pointer-events-none select-none"
+        />
+        <div className="absolute inset-0 bg-primary/60 pointer-events-none" />
         <div className="container mx-auto px-4 relative z-10 text-center flex flex-col items-center">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-foreground/10 text-sm font-medium mb-6">
             <MapPin className="h-4 w-4" />
