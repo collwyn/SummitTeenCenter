@@ -48,6 +48,7 @@ export const SubmitVolunteerBody = zod.object({
         "skilled_trade_teaching",
         "administrative",
         "security_monitoring",
+        "agriculture_fish_game",
         "other",
       ]),
     )

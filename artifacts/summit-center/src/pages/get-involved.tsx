@@ -18,6 +18,7 @@ const INTERESTS = [
   { id: "skilled_trade_teaching", label: "Skilled Trade Teaching" },
   { id: "administrative", label: "Administrative" },
   { id: "security_monitoring", label: "Security / Monitoring" },
+  { id: "agriculture_fish_game", label: "Agriculture / Fish & Game" },
   { id: "other", label: "Other" },
 ] as const;
 

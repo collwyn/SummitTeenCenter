@@ -25,6 +25,7 @@ const interestLabels: Record<string, string> = {
   skilled_trade_teaching: "Skilled Trade Teaching",
   administrative: "Administrative",
   security_monitoring: "Security / Monitoring",
+  agriculture_fish_game: "Agriculture / Fish & Game",
   other: "Other",
 };
 
