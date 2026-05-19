@@ -1,34 +1,72 @@
 import { useEffect, useState, useCallback } from "react";
 import { Image as ImageIcon, X, ChevronLeft, ChevronRight } from "lucide-react";
 
-import imgGaming from "@assets/0c834c6342fc704e844c275b99b1dcdc_1776784489756.jpg";
-import imgReadingLounge from "@assets/0e848e9b5c9c1f06b32f1c2d12f5c323_1776784489757.jpg";
-import imgPresentation from "@assets/105c99ba4f6950e3146abc9164689028_1776784489758.jpg";
-import imgBeanbagTheater from "@assets/11680ee7bd209c83bffc085b80fd7b11_1776784489758.jpg";
-import imgMuralLounge from "@assets/47516a890c3d6afa9043bbcd02e1a19b_1776784489758.jpg";
-import imgLibrary from "@assets/AshlandYouthCenterComplex_Lnd_150dpi_web-1_1776784489758.jpg";
-import imgChairs from "@assets/bc3f5616ccbb8fcd7450126e1f0207cb_1776784489758.jpg";
-import imgGreenSpace from "@assets/fbea80803fa051f2e3d4aa822af965b8_1776784489759.jpg";
-import imgGym from "@assets/Fogarty-Finger-3_1776784489759.jpg";
-import imgBasketballCourt from "@assets/eed268aceb43bbe07aae29805019715b_1776795638962.jpg";
-import imgActiveLounge from "@assets/FallonYouthCenter19+edit_1776795638964.webp";
-import imgExterior from "@assets/Saint-Cloud-Youth-Center-1_1776795638964.jpg";
-import imgCommons from "@assets/WHY-Architects-Buildings-EPA-YAMC-01-scaled_1776795638964.jpg";
-
 const GALLERY_IMAGES = [
-  { src: imgGaming, alt: "Teen gaming and music lounge", caption: "A vibrant gaming and music lounge" },
-  { src: imgReadingLounge, alt: "Reading and study lounge", caption: "Comfortable corners for reading and study" },
-  { src: imgPresentation, alt: "Beanbag presentation hall", caption: "Workshops, talks, and movie nights" },
-  { src: imgBeanbagTheater, alt: "Colorful theater seating", caption: "A bold, teen-first theater space" },
-  { src: imgMuralLounge, alt: "Mural-filled lounge", caption: "Art-forward gathering spaces" },
-  { src: imgLibrary, alt: "Open library and lounge", caption: "An open Reading Room and library" },
-  { src: imgChairs, alt: "Colorful collaboration room", caption: "Rooms made for hanging out and creating" },
-  { src: imgGreenSpace, alt: "Indoor green hangout", caption: "Indoor green spaces to decompress" },
-  { src: imgGym, alt: "Recreation hall with basketball court", caption: "Pride, identity, and a place to belong" },
-  { src: imgBasketballCourt, alt: "Full-size indoor basketball courts", caption: "Full-size courts for leagues and pick-up games" },
-  { src: imgActiveLounge, alt: "Active teen lounge with bold graphics", caption: "Bold, active spaces designed for teens" },
-  { src: imgExterior, alt: "Modern teen center exterior at dusk", caption: "Architecture that signals: this place is yours" },
-  { src: imgCommons, alt: "Open commons with grand staircase and cafe", caption: "An open commons to gather, eat, and connect" },
+  {
+    src: "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=800&auto=format&fit=crop",
+    alt: "Teens playing basketball in a gym",
+    caption: "Full-size courts for leagues and pick-up games",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1607453998774-d533f65dac99?w=800&auto=format&fit=crop",
+    alt: "Teen working on art project",
+    caption: "A creative studio for drawing, painting, and mixed media",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&auto=format&fit=crop",
+    alt: "Students studying together at a table",
+    caption: "Safe, quiet spaces for homework and collaboration",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&auto=format&fit=crop",
+    alt: "Teen using a computer for coding",
+    caption: "Technology and career skills for the future",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&auto=format&fit=crop",
+    alt: "Group of teens laughing together",
+    caption: "A place to belong, connect, and grow",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?w=800&auto=format&fit=crop",
+    alt: "Adult mentor talking with a teen",
+    caption: "One-on-one mentorship with community leaders",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1614680376593-902f74cf0d41?w=800&auto=format&fit=crop",
+    alt: "Teens working in a community garden",
+    caption: "Hands-on agriculture and conservation programs",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&auto=format&fit=crop",
+    alt: "Teens playing video games together",
+    caption: "A monitored gaming lounge with tournaments",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1471107340929-a87cd0f5b5f3?w=800&auto=format&fit=crop",
+    alt: "Teen reading in a bright, comfortable space",
+    caption: "A welcoming Reading Room to explore and unwind",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&auto=format&fit=crop",
+    alt: "Young people collaborating in a modern space",
+    caption: "Entrepreneurship workshops and career development",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&auto=format&fit=crop",
+    alt: "Community workshop with young people",
+    caption: "Workshops, talks, and life-skills training",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&auto=format&fit=crop",
+    alt: "Teens in a classroom setting",
+    caption: "Academic support and tutoring programs",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800&auto=format&fit=crop",
+    alt: "Youth volleyball game in a gymnasium",
+    caption: "Leagues and open gym for every skill level",
+  },
 ];
 
 export default function Gallery() {
