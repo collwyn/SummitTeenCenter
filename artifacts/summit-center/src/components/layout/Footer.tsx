@@ -1,5 +1,4 @@
 import { Link } from "wouter";
-import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -13,20 +12,6 @@ export default function Footer() {
             <p className="text-muted-foreground max-w-sm mb-6">
               Building Tomorrow's Leaders, Today. A premier community engagement, recreation, and education center for the teens of Columbia, SC.
             </p>
-            <div className="flex items-center gap-4">
-              <a href="#" className="text-muted-foreground hover:text-white transition-colors" aria-label="Facebook">
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-white transition-colors" aria-label="Instagram">
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-white transition-colors" aria-label="Twitter">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-white transition-colors" aria-label="YouTube">
-                <Youtube className="h-5 w-5" />
-              </a>
-            </div>
           </div>
           
           <div>
