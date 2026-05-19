@@ -16,6 +16,7 @@ import News from "@/pages/news";
 import Gallery from "@/pages/gallery";
 import Partners from "@/pages/partners";
 import Contact from "@/pages/contact";
+import Admin from "@/pages/admin";
 
 const queryClient = new QueryClient();
 
@@ -48,7 +49,10 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
-          <Router />
+          <Switch>
+            <Route path="/admin" component={Admin} />
+            <Route component={Router} />
+          </Switch>
         </WouterRouter>
         <Toaster />
       </TooltipProvider>
