@@ -17,6 +17,8 @@ import Gallery from "@/pages/gallery";
 import Partners from "@/pages/partners";
 import Contact from "@/pages/contact";
 import Admin from "@/pages/admin";
+import Privacy from "@/pages/privacy";
+import Terms from "@/pages/terms";
 
 const queryClient = new QueryClient();
 
@@ -36,6 +38,8 @@ function Router() {
           <Route path="/gallery" component={Gallery} />
           <Route path="/partners" component={Partners} />
           <Route path="/contact" component={Contact} />
+          <Route path="/privacy" component={Privacy} />
+          <Route path="/terms" component={Terms} />
           <Route component={NotFound} />
         </Switch>
       </main>
