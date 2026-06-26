@@ -1,14 +1,22 @@
 import { Heart, Target, Users, MapPin } from "lucide-react";
+import headerBg from "@assets/Acolytical_group_of_school-age_teenagers_all_races_smiling_gr__1782509626872.png";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function About() {
   return (
     <div className="flex flex-col w-full">
       {/* Header */}
-      <section className="bg-muted py-16 md:py-24">
-        <div className="container mx-auto px-4 text-center max-w-3xl">
-          <h1 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-6">About The Summit Center</h1>
-          <p className="text-xl text-muted-foreground">
+      <section className="relative overflow-hidden bg-primary py-16 md:py-24">
+        <img
+          src={headerBg}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover object-top opacity-35 pointer-events-none select-none"
+        />
+        <div className="absolute inset-0 bg-primary/55 pointer-events-none" />
+        <div className="container mx-auto px-4 text-center max-w-3xl relative z-10">
+          <h1 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">About The Summit Center</h1>
+          <p className="text-xl text-white/85">
             A community-driven initiative to create a safe, inspiring space for the youth of 29229.
           </p>
         </div>
