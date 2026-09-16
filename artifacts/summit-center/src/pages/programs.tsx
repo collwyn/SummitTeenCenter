@@ -2,7 +2,7 @@ import { useListPrograms } from "@workspace/api-client-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Activity, Briefcase, Users } from "lucide-react";
+import { Activity, Briefcase, Compass, Users } from "lucide-react";
 
 export default function Programs() {
   const { data: categories, isLoading, error } = useListPrograms();
@@ -10,6 +10,7 @@ export default function Programs() {
   const getIcon = (name: string) => {
     if (name.includes("Recreation")) return <Activity className="h-5 w-5" />;
     if (name.includes("Career")) return <Briefcase className="h-5 w-5" />;
+    if (name.includes("Personal")) return <Compass className="h-5 w-5" />;
     return <Users className="h-5 w-5" />;
   };
 
@@ -46,7 +47,7 @@ export default function Programs() {
           ) : (
             <Tabs defaultValue={categories[0].id} className="w-full">
               <div className="flex justify-center mb-12">
-                <TabsList className="grid w-full max-w-2xl grid-cols-3 h-auto p-1 bg-muted/50">
+                <TabsList className="grid w-full max-w-3xl grid-cols-4 h-auto p-1 bg-muted/50">
                   {categories.map((category) => (
                     <TabsTrigger 
                       key={category.id} 

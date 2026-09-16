@@ -151,4 +151,16 @@ export const programs = [
       { title: "Referral Resources", description: "Trusted local referrals for counseling, jobs, and education when teens or families need them." },
     ],
   },
+  {
+    id: "personal-development",
+    name: "Personal Development",
+    tagline: "Grow into your most confident, capable self.",
+    offerings: [
+      { title: "Independent Living Skills", description: "The practical stuff school skips — budgeting, banking, time management, and handling everyday adult paperwork like leases and pay stubs." },
+      { title: "Public Speaking & Communication", description: "Speak up with confidence, navigate tough conversations, and present yourself well in any room." },
+      { title: "Stress Management & Wellness", description: "Real tools for handling stress, building healthy routines, and looking after your mental well-being." },
+      { title: "Goal-Setting & Self-Discovery", description: "Get clear on who you are and what you want, then map out a plan to get there." },
+      { title: "Leadership Development", description: "Step into leadership through hands-on roles, projects, and mentorship at the center." },
+    ],
+  },
 ];
