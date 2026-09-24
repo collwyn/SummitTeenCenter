@@ -2,6 +2,7 @@ import { useEffect, useState, useCallback } from "react";
 import { Image as ImageIcon, X, ChevronLeft, ChevronRight } from "lucide-react";
 import studioImage from "@assets/Acolytical_teen_singing_--v_8.2_bc288fe2-9800-4888-b399-e3358b_1790270216862.png";
 import agricultureImage from "@assets/Acolytical_teens_doing_agriculture_--v_8.2_bd67e562-9a45-4fdb-_1790270541993.png";
+import gamingImage from "@assets/Acolytical_add_more_teens_to_the_couch_and_sitting_in_the_cha__1790271438642.png";
 
 const GALLERY_IMAGES = [
   {
@@ -40,8 +41,8 @@ const GALLERY_IMAGES = [
     caption: "Hands-on agriculture and conservation programs",
   },
   {
-    src: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&auto=format&fit=crop",
-    alt: "Teens playing video games together",
+    src: gamingImage,
+    alt: "Teens gathered in a lounge watching a video game",
     caption: "A monitored gaming lounge with tournaments",
   },
   {
