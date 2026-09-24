@@ -8,8 +8,8 @@ const GALLERY_IMAGES = [
     caption: "Full-size courts for leagues and pick-up games",
   },
   {
-    src: "https://images.unsplash.com/photo-1607453998774-d533f65dac99?w=800&auto=format&fit=crop",
-    alt: "Teen working on art project",
+    src: "https://images.pexels.com/photos/3771079/pexels-photo-3771079.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    alt: "Young artist working on a painting in a creative studio",
     caption: "A creative studio for drawing, painting, and mixed media",
   },
   {
@@ -33,8 +33,8 @@ const GALLERY_IMAGES = [
     caption: "One-on-one mentorship with community leaders",
   },
   {
-    src: "https://images.unsplash.com/photo-1614680376593-902f74cf0d41?w=800&auto=format&fit=crop",
-    alt: "Teens working in a community garden",
+    src: "https://images.pexels.com/photos/12885616/pexels-photo-12885616.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    alt: "Teen students visiting an educational edible garden",
     caption: "Hands-on agriculture and conservation programs",
   },
   {
