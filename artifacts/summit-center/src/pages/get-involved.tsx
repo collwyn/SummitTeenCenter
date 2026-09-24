@@ -22,12 +22,21 @@ const INTERESTS = [
   { id: "other", label: "Other" },
 ] as const;
 
+type VolunteerFormValues = {
+  name: string;
+  email: string;
+  phone: string;
+  neighborhood: string;
+  interests: (typeof INTERESTS)[number]["id"][];
+  message: string;
+};
+
 export default function GetInvolved() {
   const submitVolunteer = useSubmitVolunteer();
   const subscribeNewsletter = useSubscribeNewsletter();
   const { toast } = useToast();
 
-  const volunteerForm = useForm({
+  const volunteerForm = useForm<VolunteerFormValues>({
     resolver: zodResolver(SubmitVolunteerBody),
     defaultValues: {
       name: "",
@@ -180,13 +189,13 @@ export default function GetInvolved() {
                                       >
                                         <FormControl>
                                           <Checkbox
-                                            checked={field.value?.includes(interest.id as any)}
+                                            checked={field.value?.includes(interest.id)}
                                             onCheckedChange={(checked) => {
                                               return checked
                                                 ? field.onChange([...field.value, interest.id])
                                                 : field.onChange(
                                                     field.value?.filter(
-                                                      (value: string) => value !== interest.id
+                                                      (value) => value !== interest.id
                                                     )
                                                   )
                                             }}
