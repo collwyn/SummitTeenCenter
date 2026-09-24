@@ -114,7 +114,7 @@ export default function Gallery() {
           <ImageIcon className="h-12 w-12 mx-auto mb-6 text-white/80" />
           <h1 className="text-4xl md:text-5xl font-display font-bold mb-4">Vision Gallery</h1>
           <p className="text-xl text-primary-foreground/80">
-            A few examples of outstanding teen center design from around the world! Our county can set an example for others to follow, let's work together to make this a reality!
+            Our county can set an example for others to follow, let's work together to make this a reality!
           </p>
         </div>
       </section>
