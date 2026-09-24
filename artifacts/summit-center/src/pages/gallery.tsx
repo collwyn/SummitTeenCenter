@@ -1,5 +1,6 @@
 import { useEffect, useState, useCallback } from "react";
 import { Image as ImageIcon, X, ChevronLeft, ChevronRight } from "lucide-react";
+import studioImage from "@assets/Acolytical_teen_singing_--v_8.2_bc288fe2-9800-4888-b399-e3358b_1790270216862.png";
 
 const GALLERY_IMAGES = [
   {
@@ -8,9 +9,9 @@ const GALLERY_IMAGES = [
     caption: "Full-size courts for leagues and pick-up games",
   },
   {
-    src: "https://images.pexels.com/photos/3771079/pexels-photo-3771079.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    alt: "Young artist working on a painting in a creative studio",
-    caption: "A creative studio for drawing, painting, and mixed media",
+    src: studioImage,
+    alt: "Teen singing into a microphone",
+    caption: "Recording and performing arts studio and venue",
   },
   {
     src: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&auto=format&fit=crop",
