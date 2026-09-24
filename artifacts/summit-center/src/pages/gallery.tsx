@@ -1,6 +1,7 @@
 import { useEffect, useState, useCallback } from "react";
 import { Image as ImageIcon, X, ChevronLeft, ChevronRight } from "lucide-react";
 import studioImage from "@assets/Acolytical_teen_singing_--v_8.2_bc288fe2-9800-4888-b399-e3358b_1790270216862.png";
+import agricultureImage from "@assets/Acolytical_teens_doing_agriculture_--v_8.2_bd67e562-9a45-4fdb-_1790270541993.png";
 
 const GALLERY_IMAGES = [
   {
@@ -34,8 +35,8 @@ const GALLERY_IMAGES = [
     caption: "One-on-one mentorship with community leaders",
   },
   {
-    src: "https://images.pexels.com/photos/12885616/pexels-photo-12885616.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    alt: "Teen students visiting an educational edible garden",
+    src: agricultureImage,
+    alt: "Teens planting vegetables in a community garden",
     caption: "Hands-on agriculture and conservation programs",
   },
   {
